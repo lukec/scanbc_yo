@@ -98,7 +98,8 @@ while (1) {
 
         # Send it out and then wait ~0-3 hours
         my $wait_for = int(rand(180)+10);
-        print localtime . " - Sleeping for $wait_for minutes!\n";
+        my $now = now();
+        print $now->hms . " - Sleeping for $wait_for minutes!\n";
         sleep $wait_for * 60;
     }
 
