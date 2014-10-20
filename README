@@ -1,0 +1,17 @@
+Rewrite @ScanBC tweets to feature our friend, @GoldfishYO.
+
+This script runs in a docker container.  You are required to mount a config file that contains twitter login credentials and will keep state of which tweets have been sent.
+
+The config file should be mounted at `/opt/scanbc_yo/etc/config.yaml`.  It should look like this:
+
+    ---
+    screen_name: scanbc
+    twitter_access_secret: aoeu
+    twitter_access_token: aoeu
+    twitter_consumer_key: aoeu
+    twitter_consumer_secret: aoeu
+
+
+Start it like so:
+
+  docker run -v `pwd`/etc:/opt/scanbc_yo/etc --name scanbc_yo scanbc_yo
