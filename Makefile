@@ -1,4 +1,4 @@
-IMAGE_NAME="lukec/scanbc_yo"
+IMAGE_NAME="lukec/scanbc-yo"
 
 image:
 	sudo docker build -t $(IMAGE_NAME)
