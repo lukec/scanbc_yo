@@ -50,9 +50,9 @@ sub is_good_time_to_tweet {
         return 1 if $now->hour < 1;
         return 1 if $now->hour > 9;
     }
-    else { # on weekdays, only tweet from 5pm to 1 am
+    else { # on weekdays, only tweet from 3pm to 1 am
         return 1 if $now->hour < 1;
-        return 1 if $now->hour > 17;
+        return 1 if $now->hour > 15;
     }
     return 0;
 }
