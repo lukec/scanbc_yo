@@ -1,8 +1,5 @@
-IMAGE_NAME="lukec/scanbc-yo"
+IMAGE_NAME="quay.io/lukec/scanbc-yo"
 CONTAINER_NAME="scanbc-yo"
-
-image:
-	sudo docker build -t $(IMAGE_NAME)
 
 run:
 	sudo docker stop $(CONTAINER_NAME) || true
