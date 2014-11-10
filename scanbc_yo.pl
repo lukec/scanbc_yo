@@ -96,8 +96,8 @@ while (1) {
         $config->{seen}{$t->{id}} = 1;
         save_config($config);
 
-        # Send it out and then wait ~0-3 hours
-        my $wait_for = int(rand(180)+10);
+        # Send it out and then wait ~0-2 hours
+        my $wait_for = int(rand(120)+10);
         my $now = now();
         print $now->hms . " - Sleeping for $wait_for minutes!\n";
         sleep $wait_for * 60;
