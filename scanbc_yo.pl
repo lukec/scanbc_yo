@@ -133,8 +133,6 @@ sub goldfishify {
     return $text if $text =~ s/\bseveral people\b/\@Goldfishyo/ig;
     return $text if $text =~ s/\ba \d+ year old\b/\@Goldfishyo/ig;
     return $text if $text =~ s/\b\d+ patients\b/\@Goldfishyo/ig;
-    return $text if $text =~ s/\bSearch &amp; Rescue/\@Goldfishyo/ig;
-    return $text if $text =~ s/#\w+ (fire )?(crews|police) are/\@Goldfishyo is/ig;
     return undef;
 }
 
