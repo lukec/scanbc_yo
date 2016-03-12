@@ -74,6 +74,14 @@ while (1) {
             next;
         }
 
+
+        # Some tweets end up too dark and are not enjoyable
+        if ($t->{text} =~ m/suicid/) {
+            print "SKIPPING too dark: $t->{id} - $t->{text}\n";
+            next;
+        }
+
+
         my $new_tweet = goldfishify($t->{text}) or next;
         if (length($new_tweet) > 140) {
             print "SKIPPING too big: $t->{id} - $t->{text}\n";
