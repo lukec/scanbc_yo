@@ -35,10 +35,14 @@ sub send_tweet { twitter->update(shift) }
 
 sub get_latest_tweets {
     my $screen_name = $config->{screen_name};
-    my $tweets = twitter->user_timeline({
+    my $tweets = eval {
+        twitter->user_timeline({
             screen_name => $screen_name,
             count => 200,
         });
+    };
+    warn $@ if $@;
+    $tweets //= [];
     return [ sort { "$a->{id}" cmp "$b->{id}" } @$tweets ];
 }
 
